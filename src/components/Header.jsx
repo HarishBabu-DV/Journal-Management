@@ -13,7 +13,7 @@ const Header = () => {
                 </div>
             </Link>
             <Link className='' to={"/"}>
-              <FaRegCircleUser className='text-3xl max-sm:text-2xl' />
+              <FaRegCircleUser className='text-3xl max-sm:text-[1.75rem]' />
             </Link>
         </section>
         {/* Navigation bar  */}
