@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './components/Header'
+import { Route, Routes } from 'react-router'
 
 const App = () => {
   return (
@@ -7,6 +8,9 @@ const App = () => {
     <main className='max-w-[1920px] mx-auto w-full'>
       {/* Header  */}
       <Header />
+      {/* <Routes>
+        <Route path='/' element={<Header />} />
+      </Routes> */}
     </main>
   )
 }
