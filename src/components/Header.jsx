@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router'
-import logo from '../assets/assets'
+import { logo,FaRegCircleUser } from '../assets/assets'
 
 const Header = () => {
   return (
-    <header className='w-full h-[10vh] bg-slate-200'>
+    <header className='w-full h-[20vh] '>
         {/* Logo and user profile Container  */}
-        <section className=''>
+        <section className='flex items-center justify-between w-full h-1/2  px-[10%]'>
             <Link className='' to={"/"}>
-                <div className='w-[60px] h-[60px]'>
+                <div className='w-[40px] h-[40px]'>
                     <img src={logo} alt="" className='w-full h-full'/>
                 </div>
             </Link>
             <Link className='' to={"/"}>
-              
+              <FaRegCircleUser className='text-3xl' />
             </Link>
         </section>
         {/* Navigation bar  */}
