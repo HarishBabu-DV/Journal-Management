@@ -40,19 +40,19 @@ export const navItems={
     thirdSet:[
         {
             id:1,
-            navItem:"editorial board"
+            navItem:"Editorial Board"
         },
         {
             id:2,
-            navItem:"call for papers"
+            navItem:"Call For Papers"
         },
         {
             id:3,
-            navItem:"contact us"
+            navItem:"Contact Us"
         },
         {
             id:4,
-            navItem:"faqs"
+            navItem:"FAQ's"
         }
     ]
 }

@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { logo,FaRegCircleUser, FaChevronDown,HiOutlineMenu ,IoClose,navItems } from '../assets/assets'
 
 const Header = () => {
   // About navitem toggle 
   const [isAboutOpen,setIsAboutOpen]=useState(false)
+  const horizontalAboutMenuRef=useRef()
+  // // horizontalAboutNavItem.addEventListener('click',)
+  // window.addEventListener('click',event=>{
+  //   if(!hiddenAboutItems.contains(event.target) && event.target!== horizontalAboutNavItem){
+  //     hiddenAboutItems.classList.add('hide-element')
+  //   }
+  // })
+  useEffect(()=>{
+    const closeHorizontalAboutMenu=event=>{
+      if(event.path[0] !== horizontalAboutMenuRef.current){
+        setIsAboutOpen(false)
+      }
+    }
+    document.body.addEventListener('click',closeHorizontalAboutMenu);
+    return ()=> document.body.removeEventListener('click',closeHorizontalAboutMenu)
+  },[])
   
   return (
     <header className='bg-white fixed top-0 left-1/2 -translate-x-1/2 w-full px-[10%] max-md:px-[5%]'>
@@ -31,7 +47,7 @@ const Header = () => {
         </section>
 
         {/*Vertical Navigation bar  */}
-        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-10 w-[40%] py-8 vertical-navbar max-sm:w-full'>
+        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-20 w-[40%] py-8 vertical-navbar max-sm:w-full'>
 
           <label htmlFor="toggle-menu" className='flex justify-end pr-8 hover:cursor-pointer'>
             <IoClose className='text-[1.8rem] text-white max-sm:text-[1.6rem] ' />
@@ -42,7 +58,10 @@ const Header = () => {
             <Link to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
 
             {/* About  */}
-            <div className='hover:cursor-pointer  about-navitem-container ' onClick={()=>setIsAboutOpen(!isAboutOpen)}>
+            <div className='hover:cursor-pointer  about-navitem-container ' onClick={()=>{
+                setIsAboutOpen(!isAboutOpen)
+            }
+            }>
               <div className='flex items-center gap-2 py-4 px-8 justify-between hover:bg-[#7c7c7c4e] about-navitem'>
                 <span className='text-white '>About</span>
                 <span className='text-white '><FaChevronDown /></span>
@@ -62,7 +81,7 @@ const Header = () => {
             {/*Editorial Board,..,faqs*/}
             {
               navItems.thirdSet.map((navItem)=>(
-                <Link to={'/'} className='text-white capitalize py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
+                <Link to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
               ))
             }
           </div>
@@ -76,27 +95,32 @@ const Header = () => {
           <Link to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
           
           {/* About  */}
-          <div className='relative hover:cursor-pointer about-navitem-container' onClick={()=>setIsAboutOpen(!isAboutOpen)}>
-            <div className='flex items-center gap-2 about-navitem'>
+          <div className='relative hover:cursor-pointer about-navitem-container '  >
+            <div ref={horizontalAboutMenuRef} className='flex items-center gap-2 about-navitem horizontal-about-navitem' onClick={()=>{
+                setIsAboutOpen(!isAboutOpen)
+            }
+            }>
               <span className='text-white '>About</span>
               <span className='text-white '><FaChevronDown /></span>
             </div>
             {/* Hidden navitems container  */}
-            <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px] flex flex-col hidden-navitems'>
-              {
-                navItems.secondSet.map((navItem)=>(
-                  <div className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
-                    <Link to={'/'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' key={navItem.id}>{navItem.navItem}</Link>
-                  </div>  
-                ))
-              }
+            <div style={isAboutOpen ? {display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px]  hidden-navitems'>
+              <div className='flex flex-col'>
+                {
+                  navItems.secondSet.map((navItem)=>(
+                    <div className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
+                      <Link to={'/'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' key={navItem.id}>{navItem.navItem}</Link>
+                    </div>  
+                  ))
+                }
+              </div>
             </div>
           </div>
           
           {/*Editorial Board,..,faqs*/}
           {
             navItems.thirdSet.map((navItem)=>(
-              <Link to={'/'} className='text-white  capitalize py-[.3rem] hover:text-[#1b9ce3] transition-colors' key={navItem.id}>{navItem.navItem}</Link>
+              <Link to={'/'} className='text-white  py-[.3rem] hover:text-[#1b9ce3] transition-colors' key={navItem.id}>{navItem.navItem}</Link>
             ))
           }
         </nav>

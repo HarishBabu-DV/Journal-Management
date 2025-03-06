@@ -58,4 +58,9 @@
         @apply -right-full;
         transition: right 700ms ease-in ;
     }
+
+
+    .hide-element{
+        display: none;
+    }
 }
