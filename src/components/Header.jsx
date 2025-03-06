@@ -25,7 +25,7 @@ const Header = () => {
               </Link>
               {/* Menu icon  */}
               <label htmlFor="toggle-menu" className='hover:cursor-pointer hidden max-md:block '>
-                <HiOutlineMenu className='text-[1.8rem] text-[#494949] max-sm:text-[1.6rem]'/>
+                <HiOutlineMenu className='text-[1.8rem] text-[#494949]'/>
               </label>
             </div>
         </section>
