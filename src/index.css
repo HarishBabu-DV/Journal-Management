@@ -40,4 +40,19 @@
             width: 4px;
         }
     }
+    /*Checkbox to toggle navbar*/
+    #toggle-menu{
+        display: none;
+    }
+    #toggle-menu:checked ~ .vertical-navbar{
+        @apply block right-0;
+    }
+    @media screen and (min-width:768px) {
+        #toggle-menu:checked ~ .vertical-navbar{
+            @apply hidden -right-full;
+        }
+    }
+    #toggle-menu:not(:checked) ~ .vertical-navbar{
+        @apply hidden -right-full;
+    }
 }

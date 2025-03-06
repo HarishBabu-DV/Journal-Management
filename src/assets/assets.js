@@ -1,7 +1,8 @@
 import logo from './images/smerlogo.png'
 import logowhite from './images/smerlogo(white).png'
 import { FaRegCircleUser,FaChevronDown  } from "react-icons/fa6";
-import { CircleUser } from 'lucide-react';
+import { HiOutlineMenu } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 //Nav Items
 export const navItems={
@@ -57,4 +58,4 @@ export const navItems={
 }
 
 
-export {logo,logowhite,FaRegCircleUser,FaChevronDown}
+export {logo,logowhite,FaRegCircleUser,FaChevronDown,HiOutlineMenu,IoClose}

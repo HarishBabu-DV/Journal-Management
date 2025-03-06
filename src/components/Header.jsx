@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router'
-import { logo,FaRegCircleUser, FaChevronDown, navItems } from '../assets/assets'
+import { logo,FaRegCircleUser, FaChevronDown,HiOutlineMenu ,IoClose,navItems } from '../assets/assets'
 
 const Header = () => {
   // About navitem toggle 
   const [isAboutOpen,setIsAboutOpen]=useState(false)
+  
   return (
     <header className='w-[80%] mx-auto'>
+        {/* Checkbox to toggle menu  */}
+        <input type="checkbox" name="open-menu" id="toggle-menu" />
 
         {/* Logo and user profile Container  */}
         <section className='flex items-center justify-between w-full py-2' >
@@ -15,13 +18,59 @@ const Header = () => {
                     <img src={logo} alt="" className='w-full h-full'/>
                 </div>
             </Link>
-            <Link className='' to={"/"}>
-              <FaRegCircleUser className='text-[1.8rem] text-[#494949] max-sm:text-[1.6rem]'/>
-            </Link>
+            <div className='flex items-center gap-3'>
+              <Link className='bg-[#1b9ce3] text-white px-4 py-1 rounded-md' to={"/"}>
+                  Publish
+                {/* <FaRegCircleUser className='text-[1.8rem] text-[#494949] max-sm:text-[1.6rem]'/> */}
+              </Link>
+              {/* Menu icon  */}
+              <label htmlFor="toggle-menu" className='hover:cursor-pointer hidden max-md:block '>
+                <HiOutlineMenu className='text-[1.8rem] text-[#494949] max-sm:text-[1.6rem]'/>
+              </label>
+            </div>
         </section>
 
-        {/* Navigation bar  */}
-        <nav className='flex items-center gap-10 bg-[#2e2e2e] relative pl-10'>
+        {/*Vertical Navigation bar  */}
+        <nav className='bg-[#2e2e2e] absolute top-0 h-screen z-10 w-[40%] py-8 vertical-navbar max-sm:w-full'>
+
+          <label htmlFor="toggle-menu" className='flex justify-end pr-8 hover:cursor-pointer'>
+            <IoClose className='text-[1.8rem] text-white max-sm:text-[1.6rem] ' />
+          </label>
+
+          <div className='flex flex-col'>
+            {/* Home  */}
+            <Link to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
+
+            {/* About  */}
+            <div className='hover:cursor-pointer  about-navitem-container ' onClick={()=>setIsAboutOpen(!isAboutOpen)}>
+              <div className='flex items-center gap-2 py-4 px-8 justify-between hover:bg-[#7c7c7c4e] about-navitem'>
+                <span className='text-white '>About</span>
+                <span className='text-white '><FaChevronDown /></span>
+              </div>
+              {/* Hidden navitems container  */}
+              <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='flex flex-col '>
+                {
+                  navItems.secondSet.map((navItem)=>(
+                    <div className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
+                      <Link to={'/'} className='text-white capitalize py-3  transition-colors ' key={navItem.id}>{navItem.navItem}</Link>
+                    </div>  
+                  ))
+                }
+              </div>
+            </div>
+
+            {/*Editorial Board,..,faqs*/}
+            {
+              navItems.thirdSet.map((navItem)=>(
+                <Link to={'/'} className='text-white capitalize py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
+              ))
+            }
+          </div>
+        </nav>
+
+
+        {/*Horizontal Navigation bar  */}
+        <nav className='flex flex-wrap items-center gap-10 bg-[#2e2e2e] relative pl-6 max-md:hidden'>
           
           {/* Home  */}
           <Link to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>

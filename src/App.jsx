@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router'
 const App = () => {
   return (
     // App Container  
-    <main className='max-w-[1920px] mx-auto w-full'>
+    <main className='max-w-[1920px] mx-auto w-full  relative'>
       {/* Header  */}
       <Header />
       {/* <Routes>
