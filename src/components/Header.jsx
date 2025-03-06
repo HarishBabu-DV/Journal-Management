@@ -7,7 +7,7 @@ const Header = () => {
   const [isAboutOpen,setIsAboutOpen]=useState(false)
   
   return (
-    <header className='w-[80%] mx-auto'>
+    <header className='w-[80%] mx-auto max-md:w-[90%]'>
         {/* Checkbox to toggle menu  */}
         <input type="checkbox" name="open-menu" id="toggle-menu" />
 
