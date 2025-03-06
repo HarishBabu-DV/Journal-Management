@@ -95,11 +95,11 @@ const Header = () => {
           <Link to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
           
           {/* About  */}
-          <div className='relative hover:cursor-pointer about-navitem-container '  >
-            <div ref={horizontalAboutMenuRef} className='flex items-center gap-2 about-navitem horizontal-about-navitem' onClick={()=>{
+          <div className='relative hover:cursor-pointer about-navitem-container ' ref={horizontalAboutMenuRef} onClick={()=>{
                 setIsAboutOpen(!isAboutOpen)
             }
             }>
+            <div  className='flex items-center gap-2 about-navitem horizontal-about-navitem' >
               <span className='text-white '>About</span>
               <span className='text-white '><FaChevronDown /></span>
             </div>
