@@ -45,14 +45,17 @@
         display: none;
     }
     #toggle-menu:checked ~ .vertical-navbar{
-        @apply block right-0;
+        @apply right-0;
+        transition: right 700ms ease-out;
     }
     @media screen and (min-width:768px) {
         #toggle-menu:checked ~ .vertical-navbar{
-            @apply hidden -right-full;
+            @apply -right-full;
+            transition: right 700ms ease-in ;
         }
     }
     #toggle-menu:not(:checked) ~ .vertical-navbar{
-        @apply hidden -right-full;
+        @apply -right-full;
+        transition: right 700ms ease-in ;
     }
 }

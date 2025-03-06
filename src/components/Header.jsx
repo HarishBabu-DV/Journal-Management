@@ -7,7 +7,7 @@ const Header = () => {
   const [isAboutOpen,setIsAboutOpen]=useState(false)
   
   return (
-    <header className='w-[80%] mx-auto max-md:w-[90%]'>
+    <header className='bg-white fixed top-0 left-1/2 -translate-x-1/2 w-full px-[10%] max-md:px-[5%]'>
         {/* Checkbox to toggle menu  */}
         <input type="checkbox" name="open-menu" id="toggle-menu" />
 
@@ -31,7 +31,7 @@ const Header = () => {
         </section>
 
         {/*Vertical Navigation bar  */}
-        <nav className='bg-[#2e2e2e] absolute top-0 h-screen z-10 w-[40%] py-8 vertical-navbar max-sm:w-full'>
+        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-10 w-[40%] py-8 vertical-navbar max-sm:w-full'>
 
           <label htmlFor="toggle-menu" className='flex justify-end pr-8 hover:cursor-pointer'>
             <IoClose className='text-[1.8rem] text-white max-sm:text-[1.6rem] ' />
@@ -48,7 +48,7 @@ const Header = () => {
                 <span className='text-white '><FaChevronDown /></span>
               </div>
               {/* Hidden navitems container  */}
-              <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='flex flex-col '>
+              <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='  flex flex-col z-10'>
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
@@ -82,7 +82,7 @@ const Header = () => {
               <span className='text-white '><FaChevronDown /></span>
             </div>
             {/* Hidden navitems container  */}
-            <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='absolute top-[130%] left-0 w-[300px] flex flex-col hidden-navitems'>
+            <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px] flex flex-col hidden-navitems'>
               {
                 navItems.secondSet.map((navItem)=>(
                   <div className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
