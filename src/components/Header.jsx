@@ -7,10 +7,9 @@ const Header = () => {
   const [isHorizontalAboutOpen,setIsHorizontalAboutOpen]=useState(false)
   const [isVerticalAboutOpen,setIsVerticalAboutOpen]=useState(false)
   const horizontalAboutMenuRef=useRef()
-  const verticalNavBar=useRef()
+  const toggleVerticalMenu=useRef()
   const handleVerticalNavClose=()=>{
-    verticalNavBar.style.right="10%";
-    verticalNavBar.style.transition="right 700ms ease-in";
+   toggleVerticalMenu.current.checked=false
   }
     // document.body.addEventListener('click',(event)=>{
     //   if(verticalNavItem.current.contains(event.target)){
@@ -41,7 +40,7 @@ const Header = () => {
   return (
     <header className='bg-white fixed top-0 left-1/2 -translate-x-1/2 w-full px-[10%] max-lg:px-[5%]'>
         {/* Checkbox to toggle menu  */}
-        <input type="checkbox" name="open-menu" id="toggle-menu" />
+        <input type="checkbox" ref={toggleVerticalMenu} name="open-menu" id="toggle-menu" />
 
         {/* Logo and user profile Container  */}
         <section className='flex items-center justify-between w-full py-2' >
@@ -63,7 +62,7 @@ const Header = () => {
         </section>
 
         {/*Vertical Navigation bar  */}
-        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-20 w-[40%] py-8 vertical-navbar max-sm:w-full' ref={verticalNavBar}>
+        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-20 w-[40%] py-8 vertical-navbar max-sm:w-full'>
 
           <label htmlFor="toggle-menu" className='flex justify-end pr-8 hover:cursor-pointer'>
             <IoClose className='text-[1.8rem] text-white max-sm:text-[1.6rem] ' />
@@ -74,7 +73,7 @@ const Header = () => {
             <Link onClick={handleVerticalNavClose} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
 
             {/* About  */}
-            <div className='hover:cursor-pointer  about-navitem-container ' onClick={()=>{
+            <div className='hover:cursor-pointer about-navitem-container ' onClick={()=>{
                 setIsVerticalAboutOpen(!isVerticalAboutOpen)
             }
             }>
@@ -83,11 +82,11 @@ const Header = () => {
                 <span className='text-white '><FaChevronDown /></span>
               </div>
               {/* Hidden navitems container  */}
-              <div style={isVerticalAboutOpen?{display:"block"}:{display:"none"}}  className='  flex flex-col z-10'>
+              <div style={isVerticalAboutOpen?{display:"block"}:{display:"none"}}  className=' flex flex-col z-10'>
                 {
                   navItems.secondSet.map((navItem)=>(
-                    <div key={navItem.id} className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
-                      <Link  onClick={handleVerticalNavClose} to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors' >{navItem.navItem}</Link>
+                    <div key={navItem.id}  className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
+                      <Link  onClick={handleVerticalNavClose}  to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }

@@ -6,7 +6,7 @@ const Home = () => {
     const location=useLocation();
     
     return (
-    <section className='w-full mt-[10%] pl-[10%] pr-[27%] max-lg:pl-[5%] max-lg:pr-[22%] max-md:pr-[5%]'>
+    <section className='w-full pt-[130px] pl-[10%] pr-[27%] max-lg:pl-[5%] max-lg:pr-[22%] max-md:pr-[5%]'>
         {/* Path  */}
         <div>
             {
@@ -15,7 +15,7 @@ const Home = () => {
                     null
             }
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloremque dolorem praesentium quos repudiandae! Sint enim fugit et voluptates odit, aliquam sequi, sit maxime perferendis, unde necessitatibus. Ex, obcaecati quam!
+        <p className='py-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id doloremque dolorem praesentium quos repudiandae! Sint enim fugit et voluptates odit, aliquam sequi, sit maxime perferendis, unde necessitatibus. Ex, obcaecati quam!
         Perferendis nemo totam ipsam eos, dolorem facilis odit quasi alias eligendi quaerat mollitia ad veritatis? Velit iure aut asperiores. Corporis distinctio impedit laboriosam provident maiores, eum dolor doloremque rem asperiores!
         Nostrum, dicta voluptatibus. Beatae facere, nulla corrupti sunt accusantium autem tenetur libero quisquam quos repellat error optio impedit deserunt deleniti reiciendis pariatur saepe inventore iusto aut voluptates, perferendis illum maxime.
         Dicta cupiditate possimus nulla nemo voluptatem, numquam laudantium ab blanditiis quam velit excepturi fuga in recusandae? Totam sapiente eveniet ipsa impedit nemo culpa reiciendis, quam ducimus eius ab in officia!

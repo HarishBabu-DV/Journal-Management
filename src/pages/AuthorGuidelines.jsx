@@ -6,7 +6,7 @@ const AuthorGuidelines = () => {
   const location=useLocation();
   console.log(location);
   return (
-    <section className='w-full mt-[10%] pl-[10%] pr-[27%]'>
+    <section className='w-full pt-[130px] pl-[10%] pr-[27%]'>
         {/* Path  */}
         <div>
             {
