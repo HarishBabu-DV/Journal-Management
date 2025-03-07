@@ -67,14 +67,14 @@ const Header = () => {
 
           <div className='flex flex-col'>
             {/* Home  */}
-            <Link onClick={handleVerticalNavClose} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
+            <Link style={currentLocation.pathname==='/'?{borderLeft:"5px solid #1b9ce3"}:null } onClick={handleVerticalNavClose} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
 
             {/* About  */}
             <div className='hover:cursor-pointer about-navitem-container ' onClick={()=>{
                 setIsVerticalAboutOpen(!isVerticalAboutOpen)
             }
             }>
-              <div className='flex items-center gap-2 py-4 px-8 justify-between hover:bg-[#7c7c7c4e] about-navitem'>
+              <div style={currentLocation.pathname.includes('/about')?{borderLeft:"5px solid #1b9ce3"}:null } className='flex items-center gap-2 py-4 px-8 justify-between hover:bg-[#7c7c7c4e] about-navitem'>
                 <span className='text-white '>About</span>
                 <span className='text-white '><FaChevronDown /></span>
               </div>
@@ -93,7 +93,7 @@ const Header = () => {
             {/*Editorial Board,..,faqs*/}
             {
               navItems.thirdSet.map((navItem)=>(
-                <Link onClick={handleVerticalNavClose} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>
+                <Link style={currentLocation.pathname===`/${navItem.routeName}`?{borderLeft:"5px solid #1b9ce3"}:null } onClick={handleVerticalNavClose} to={`/${navItem.routeName}`} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>
                   {navItem.navItem}
                 </Link>
               ))
@@ -123,7 +123,7 @@ const Header = () => {
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
-                      <Link to={`/about/${navItem.routeName}`} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
+                      <Link  to={`/about/${navItem.routeName}`} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
@@ -134,7 +134,7 @@ const Header = () => {
           {/*Editorial Board,..,faqs*/}
           {
             navItems.thirdSet.map((navItem)=>(
-              <Link to={'/'} className='text-white  py-[.3rem] hover:text-[#1b9ce3] transition-colors' key={navItem.id}>{navItem.navItem}</Link>
+              <Link style={currentLocation.pathname===`/${navItem.routeName}`?{borderBottom:"5px solid #1b9ce3"}:null } to={`/${navItem.routeName}`} className='text-white  py-[.3rem] hover:text-[#1b9ce3] transition-colors' key={navItem.id}>{navItem.navItem}</Link>
             ))
           }
         </nav>
