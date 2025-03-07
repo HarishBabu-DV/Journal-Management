@@ -7,7 +7,7 @@ const Journal = () => {
   console.log(location);
    
   return (
-    <section className='w-full mt-[10%] pl-[10%] pr-[27%]'>
+    <section className='w-full pt-[130px] pl-[10%] pr-[27%] max-lg:pl-[5%] max-lg:pr-[22%] max-md:pr-[5%]'>
          {/* Path  */}
          <div>
             {
