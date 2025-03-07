@@ -106,16 +106,16 @@ const Header = () => {
         <nav className='flex flex-wrap items-center gap-10 bg-[#2e2e2e] relative pl-6 max-md:hidden'>
           
           {/* Home  */}
-          <Link style={currentLocation.pathname==='/'?{color:"#1b9ce3"}:null }  to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
+          <Link style={currentLocation.pathname==='/'?{borderBottom:"5px solid #1b9ce3"}:null }  to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
           
           {/* About  */}
           <div className='relative hover:cursor-pointer about-navitem-container ' ref={horizontalAboutMenuRef} onClick={()=>{
                 setIsHorizontalAboutOpen(!isHorizontalAboutOpen)
             }
             }>
-            <div  className='flex items-center gap-2 about-navitem horizontal-about-navitem' >
-              <span style={currentLocation.pathname.includes('/about')?{color:"#1b9ce3"}:null} className='text-white '>About</span>
-              <span style={currentLocation.pathname.includes('/about')?{color:"#1b9ce3"}:null} className='text-white '><FaChevronDown /></span>
+            <div style={currentLocation.pathname.includes('/about')?{borderBottom:"5px solid #1b9ce3"}:null } className='flex items-center gap-2 about-navitem horizontal-about-navitem py-[.3rem]' >
+              <span className='text-white '>About</span>
+              <span className='text-white '><FaChevronDown /></span>
             </div>
             {/* Hidden navitems container  */}
             <div style={isHorizontalAboutOpen ? {display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px]  hidden-navitems'>
@@ -140,7 +140,7 @@ const Header = () => {
         </nav>
           
         {/* Sidebar  */}
-        <aside className='w-[15%] bg-green-300 h-[60vh] right-[10%] absolute top-[120%] max-lg:right-[5%] max-md:hidden'>
+        <aside className='w-[15%] bg-gray-300 h-[60vh] right-[10%] absolute top-[120%] max-lg:right-[5%] max-md:hidden'>
           <p>hello i am sidebar</p>
         </aside>
         <Outlet />
