@@ -50,12 +50,12 @@
     }
     @media screen and (min-width:768px) {
         #toggle-menu:checked ~ .vertical-navbar{
-            @apply -right-full;
+            @apply -right-[150%];
             transition: right 700ms ease-in ;
         }
     }
     #toggle-menu:not(:checked) ~ .vertical-navbar{
-        @apply -right-full;
+        @apply -right-[150%];
         transition: right 700ms ease-in ;
     }
 

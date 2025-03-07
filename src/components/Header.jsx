@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, Outlet } from 'react-router'
 import { logo,FaRegCircleUser, FaChevronDown,HiOutlineMenu ,IoClose,navItems } from '../assets/assets'
 
 const Header = () => {
@@ -110,7 +110,7 @@ const Header = () => {
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
-                      <Link to={'/'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
+                      <Link to={'/about'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
@@ -125,7 +125,12 @@ const Header = () => {
             ))
           }
         </nav>
-
+          
+        {/* Sidebar  */}
+        <aside className='w-[15%] bg-green-300 h-[60vh] right-[10%] absolute top-[120%] max-lg:right-[5%]'>
+          <p>hello i am sidebar</p>
+        </aside>
+        <Outlet />
     </header>
   )
 }
