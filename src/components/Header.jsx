@@ -72,7 +72,7 @@ const Header = () => {
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
-                      <Link to={'/'} className='text-white capitalize py-3  transition-colors ' >{navItem.navItem}</Link>
+                      <Link to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors ' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
@@ -110,7 +110,7 @@ const Header = () => {
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
-                      <Link to={'/about'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
+                      <Link to={`/about/${navItem.routeName}`} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }

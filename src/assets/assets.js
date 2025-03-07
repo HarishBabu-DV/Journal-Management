@@ -10,31 +10,38 @@ export const navItems={
     secondSet:[
         {
             id:1,
-            navItem:"the journal"
+            navItem:"the journal",
+            routeName:"journal"
         },
         {
             id:2,
-            navItem:"author guidelines"
+            navItem:"author guidelines",
+            routeName:"author-guidelines"
         },
         {
             id:3,
-            navItem:"submission & review process"
+            navItem:"submission & review process",
+            routeName:"submission-and-review-process"
         },
         {
             id:4,
-            navItem:"current & past issues"
+            navItem:"current & past issues",
+            routeName:"current-and-past-issues"
         },
         {
             id:5,
-            navItem:"research ethics and policies"
+            navItem:"research ethics and policies",
+            routeName:"research-ethics-and-policies"
         },
         {
             id:6,
-            navItem:"indexing and abstracting"
+            navItem:"indexing and abstracting",
+            routeName:"indexing-and-abstracting"
         },
         {
             id:7,
-            navItem:"reviewer guidelines"
+            navItem:"reviewer guidelines",
+            routeName:"reviewer-guidelines"
         }
     ],
     thirdSet:[

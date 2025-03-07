@@ -2,7 +2,8 @@ import React from 'react'
 import Header from './components/Header'
 import { Route, Routes } from 'react-router'
 import Home from './pages/Home'
-import About from './pages/About'
+import Journal from './pages/Journal'
+import AuthorGuidelines from './pages/AuthorGuidelines'
 
 const App = () => {
   return (
@@ -12,7 +13,13 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/about/journal' element={<Journal />} /> 
+        <Route path='/about/author-guidelines' element={<AuthorGuidelines />} />
+        {/* <Route path='/submission-and-review-process' element={<Home />} /> */}
+        {/* <Route path='/current-and-past-issues' element={<Home />} /> */}
+        {/* <Route path='/research-ethics-and-policies' element={<Home />} /> */}
+        {/* <Route path='/indexing-and-abstracting' element={<Home />} /> */}
+        {/* <Route path='/reviewer-guidelines' element={<Home />} /> */}
       </Routes>
     </main>
   )
