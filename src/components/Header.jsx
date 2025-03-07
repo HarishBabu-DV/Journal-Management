@@ -87,9 +87,7 @@ const Header = () => {
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
-                      <Link  onClick={()=>{
-              handleVerticalNavClose
-            }} to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors' >{navItem.navItem}</Link>
+                      <Link  onClick={handleVerticalNavClose} to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
@@ -99,9 +97,7 @@ const Header = () => {
             {/*Editorial Board,..,faqs*/}
             {
               navItems.thirdSet.map((navItem)=>(
-                <Link onClick={()=>{
-                  handleVerticalNavClose
-                }} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
+                <Link onClick={handleVerticalNavClose} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
               ))
             }
           </div>
