@@ -7,6 +7,20 @@ const Header = () => {
   const [isHorizontalAboutOpen,setIsHorizontalAboutOpen]=useState(false)
   const [isVerticalAboutOpen,setIsVerticalAboutOpen]=useState(false)
   const horizontalAboutMenuRef=useRef()
+  const verticalNavBar=useRef()
+  const handleVerticalNavClose=()=>{
+    verticalNavBar.style.right="10%";
+    verticalNavBar.style.transition="right 700ms ease-in";
+  }
+    // document.body.addEventListener('click',(event)=>{
+    //   if(verticalNavItem.current.contains(event.target)){
+    //     console.log('navitem clicked');
+    //   }
+    //   else{
+    //     console.log('outside navitem clicked');
+    //   }
+    // })
+  
   // // horizontalAboutNavItem.addEventListener('click',)
   // window.addEventListener('click',event=>{
   //   if(!hiddenAboutItems.contains(event.target) && event.target!== horizontalAboutNavItem){
@@ -15,8 +29,9 @@ const Header = () => {
   // })
   useEffect(()=>{
     const closeHorizontalAboutMenu=event=>{
-      if(event.path[0] !== horizontalAboutMenuRef.current){
-        setIsHorizontalAboutOpen(false)
+      console.log(event);
+      if(!horizontalAboutMenuRef.current.contains(event.target)){
+        setIsHorizontalAboutOpen(false) 
       }
     }
     document.body.addEventListener('click',closeHorizontalAboutMenu);
@@ -48,7 +63,7 @@ const Header = () => {
         </section>
 
         {/*Vertical Navigation bar  */}
-        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-20 w-[40%] py-8 vertical-navbar max-sm:w-full'>
+        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-20 w-[40%] py-8 vertical-navbar max-sm:w-full' ref={verticalNavBar}>
 
           <label htmlFor="toggle-menu" className='flex justify-end pr-8 hover:cursor-pointer'>
             <IoClose className='text-[1.8rem] text-white max-sm:text-[1.6rem] ' />
@@ -56,7 +71,7 @@ const Header = () => {
 
           <div className='flex flex-col'>
             {/* Home  */}
-            <Link to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
+            <Link onClick={handleVerticalNavClose} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] hover:bg-[#7c7c7c4e] transition-colors'> {navItems.firstSet} </Link>
 
             {/* About  */}
             <div className='hover:cursor-pointer  about-navitem-container ' onClick={()=>{
@@ -72,7 +87,9 @@ const Header = () => {
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
-                      <Link to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors ' >{navItem.navItem}</Link>
+                      <Link  onClick={()=>{
+              handleVerticalNavClose
+            }} to={`/about/${navItem.routeName}`} className='text-white capitalize py-3  transition-colors' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
@@ -82,7 +99,9 @@ const Header = () => {
             {/*Editorial Board,..,faqs*/}
             {
               navItems.thirdSet.map((navItem)=>(
-                <Link to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
+                <Link onClick={()=>{
+                  handleVerticalNavClose
+                }} to={'/'} className='text-white py-4 px-8 hover:text-[#1b9ce3] transition-colors hover:bg-[#7c7c7c4e]' key={navItem.id}>{navItem.navItem}</Link>
               ))
             }
           </div>
