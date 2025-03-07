@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <section className='w-full mt-[10%] pl-[10%] pr-[27%]'>
+    <section className='w-full mt-[10%] pl-[10%] pr-[27%] max-lg:pl-[5%] max-lg:pr-[22%] max-md:pr-[5%]'>
         <p>Home Page</p>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi cupiditate amet sit, provident voluptatibus autem quaerat voluptate quae unde earum repellat expedita, similique obcaecati laboriosam suscipit cum corporis consequatur quibusdam?
         Distinctio ea beatae illum, adipisci est consequuntur quis laudantium perferendis cupiditate ullam nesciunt, enim animi amet quod deleniti quasi nostrum labore! Esse vel iste nesciunt suscipit vero eius hic illum.

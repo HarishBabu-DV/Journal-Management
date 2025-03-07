@@ -127,7 +127,7 @@ const Header = () => {
         </nav>
           
         {/* Sidebar  */}
-        <aside className='w-[15%] bg-green-300 h-[60vh] right-[10%] absolute top-[120%] max-lg:right-[5%]'>
+        <aside className='w-[15%] bg-green-300 h-[60vh] right-[10%] absolute top-[120%] max-lg:right-[5%] max-md:hidden'>
           <p>hello i am sidebar</p>
         </aside>
         <Outlet />
