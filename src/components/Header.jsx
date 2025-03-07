@@ -1,31 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, Outlet } from 'react-router'
+import { Link, Outlet, useLocation } from 'react-router'
 import { logo,FaRegCircleUser, FaChevronDown,HiOutlineMenu ,IoClose,navItems } from '../assets/assets'
 
 const Header = () => {
-  // About navitem toggle 
+  // Horizontal about menu status 
   const [isHorizontalAboutOpen,setIsHorizontalAboutOpen]=useState(false)
+
+  // Vertical about menu status 
   const [isVerticalAboutOpen,setIsVerticalAboutOpen]=useState(false)
+
+  //Horizontal About menu
   const horizontalAboutMenuRef=useRef()
+
+  //Checkbox to toggle vertical Navbar
   const toggleVerticalMenu=useRef()
+
+  //Function to handle when vertical about navitems are clicked
   const handleVerticalNavClose=()=>{
    toggleVerticalMenu.current.checked=false
   }
-    // document.body.addEventListener('click',(event)=>{
-    //   if(verticalNavItem.current.contains(event.target)){
-    //     console.log('navitem clicked');
-    //   }
-    //   else{
-    //     console.log('outside navitem clicked');
-    //   }
-    // })
+ 
+  const currentLocation=useLocation()
+
   
-  // // horizontalAboutNavItem.addEventListener('click',)
-  // window.addEventListener('click',event=>{
-  //   if(!hiddenAboutItems.contains(event.target) && event.target!== horizontalAboutNavItem){
-  //     hiddenAboutItems.classList.add('hide-element')
-  //   }
-  // })
   useEffect(()=>{
     const closeHorizontalAboutMenu=event=>{
       console.log(event);
@@ -50,7 +47,7 @@ const Header = () => {
                 </div>
             </Link>
             <div className='flex items-center gap-3'>
-              <Link className='bg-[#1b9ce3] text-white px-4 py-1 rounded-md' to={"/"}>
+              <Link className='bg-[#1b9ce3] text-white px-4 py-1 rounded-md hover:bg-[#2383b8]' to={"/"}>
                   Publish
                 {/* <FaRegCircleUser className='text-[1.8rem] text-[#494949] max-sm:text-[1.6rem]'/> */}
               </Link>
@@ -109,7 +106,7 @@ const Header = () => {
         <nav className='flex flex-wrap items-center gap-10 bg-[#2e2e2e] relative pl-6 max-md:hidden'>
           
           {/* Home  */}
-          <Link to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
+          <Link style={currentLocation.pathname==='/'?{color:"#1b9ce3"}:null }  to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
           
           {/* About  */}
           <div className='relative hover:cursor-pointer about-navitem-container ' ref={horizontalAboutMenuRef} onClick={()=>{
@@ -117,8 +114,8 @@ const Header = () => {
             }
             }>
             <div  className='flex items-center gap-2 about-navitem horizontal-about-navitem' >
-              <span className='text-white '>About</span>
-              <span className='text-white '><FaChevronDown /></span>
+              <span style={currentLocation.pathname.includes('/about')?{color:"#1b9ce3"}:null} className='text-white '>About</span>
+              <span style={currentLocation.pathname.includes('/about')?{color:"#1b9ce3"}:null} className='text-white '><FaChevronDown /></span>
             </div>
             {/* Hidden navitems container  */}
             <div style={isHorizontalAboutOpen ? {display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px]  hidden-navitems'>

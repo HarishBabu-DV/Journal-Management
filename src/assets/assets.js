@@ -47,19 +47,23 @@ export const navItems={
     thirdSet:[
         {
             id:1,
-            navItem:"Editorial Board"
+            navItem:"Editorial Board",
+            routeName:"editorial-board"
         },
         {
             id:2,
-            navItem:"Call For Papers"
+            navItem:"Call For Papers",
+            routeName:"call-for-papers"
         },
         {
             id:3,
-            navItem:"Contact Us"
+            navItem:"Contact Us",
+            routeName:"contact-us"
         },
         {
             id:4,
-            navItem:"FAQ's"
+            navItem:"FAQ's",
+            routeName:"faqs"
         }
     ]
 }
