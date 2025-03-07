@@ -4,7 +4,8 @@ import { logo,FaRegCircleUser, FaChevronDown,HiOutlineMenu ,IoClose,navItems } f
 
 const Header = () => {
   // About navitem toggle 
-  const [isAboutOpen,setIsAboutOpen]=useState(false)
+  const [isHorizontalAboutOpen,setIsHorizontalAboutOpen]=useState(false)
+  const [isVerticalAboutOpen,setIsVerticalAboutOpen]=useState(false)
   const horizontalAboutMenuRef=useRef()
   // // horizontalAboutNavItem.addEventListener('click',)
   // window.addEventListener('click',event=>{
@@ -15,7 +16,7 @@ const Header = () => {
   useEffect(()=>{
     const closeHorizontalAboutMenu=event=>{
       if(event.path[0] !== horizontalAboutMenuRef.current){
-        setIsAboutOpen(false)
+        setIsHorizontalAboutOpen(false)
       }
     }
     document.body.addEventListener('click',closeHorizontalAboutMenu);
@@ -23,7 +24,7 @@ const Header = () => {
   },[])
   
   return (
-    <header className='bg-white fixed top-0 left-1/2 -translate-x-1/2 w-full px-[10%] max-md:px-[5%]'>
+    <header className='bg-white fixed top-0 left-1/2 -translate-x-1/2 w-full px-[10%] max-lg:px-[5%]'>
         {/* Checkbox to toggle menu  */}
         <input type="checkbox" name="open-menu" id="toggle-menu" />
 
@@ -59,7 +60,7 @@ const Header = () => {
 
             {/* About  */}
             <div className='hover:cursor-pointer  about-navitem-container ' onClick={()=>{
-                setIsAboutOpen(!isAboutOpen)
+                setIsVerticalAboutOpen(!isVerticalAboutOpen)
             }
             }>
               <div className='flex items-center gap-2 py-4 px-8 justify-between hover:bg-[#7c7c7c4e] about-navitem'>
@@ -67,11 +68,11 @@ const Header = () => {
                 <span className='text-white '><FaChevronDown /></span>
               </div>
               {/* Hidden navitems container  */}
-              <div style={isAboutOpen?{display:"block"}:{display:"none"}}  className='  flex flex-col z-10'>
+              <div style={isVerticalAboutOpen?{display:"block"}:{display:"none"}}  className='  flex flex-col z-10'>
                 {
                   navItems.secondSet.map((navItem)=>(
-                    <div className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
-                      <Link to={'/'} className='text-white capitalize py-3  transition-colors ' key={navItem.id}>{navItem.navItem}</Link>
+                    <div key={navItem.id} className='pl-12 hover:bg-[#7c7c7c4e] flex hidden-navitems-navitem'>
+                      <Link to={'/'} className='text-white capitalize py-3  transition-colors ' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
@@ -96,7 +97,7 @@ const Header = () => {
           
           {/* About  */}
           <div className='relative hover:cursor-pointer about-navitem-container ' ref={horizontalAboutMenuRef} onClick={()=>{
-                setIsAboutOpen(!isAboutOpen)
+                setIsHorizontalAboutOpen(!isHorizontalAboutOpen)
             }
             }>
             <div  className='flex items-center gap-2 about-navitem horizontal-about-navitem' >
@@ -104,12 +105,12 @@ const Header = () => {
               <span className='text-white '><FaChevronDown /></span>
             </div>
             {/* Hidden navitems container  */}
-            <div style={isAboutOpen ? {display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px]  hidden-navitems'>
+            <div style={isHorizontalAboutOpen ? {display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px]  hidden-navitems'>
               <div className='flex flex-col'>
                 {
                   navItems.secondSet.map((navItem)=>(
-                    <div className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
-                      <Link to={'/'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' key={navItem.id}>{navItem.navItem}</Link>
+                    <div key={navItem.id} className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
+                      <Link to={'/'} className='capitalize py-[.3rem] px-[1.5rem] transition-colors ' >{navItem.navItem}</Link>
                     </div>  
                   ))
                 }
