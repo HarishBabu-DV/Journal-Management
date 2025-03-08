@@ -26,24 +26,24 @@ const App = () => {
         
         <Routes>
           {/* Home  */}
-          <Route path='/' element={<Home classname='w-[80%] max-lg:w-full pt-[130px]' />} />
+          <Route path='/' element={<Home classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
           {/* About  */}
           <Route path='/about/journal' element={<Journal classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} /> 
-          <Route path='/about/author-guidelines' element={<AuthorGuidelines />} />
-          <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess />} />
-          <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues />} />
-          <Route path='/about/research-ethics-and-policies' element={<ResearchEthicsAndPolicies />} />
-          <Route path='/about/indexing-and-abstracting' element={<IndexingAndAbstracting />} />
-          <Route path='/about/reviewer-guidelines' element={<ReviewerGuidelines />} />
+          <Route path='/about/author-guidelines' element={<AuthorGuidelines classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/about/research-ethics-and-policies' element={<ResearchEthicsAndPolicies classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/about/indexing-and-abstracting' element={<IndexingAndAbstracting classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
+          <Route path='/about/reviewer-guidelines' element={<ReviewerGuidelines classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
 
           {/* Editorial Board  */}
-          <Route path='/editorial-board' element={<EditorialBoard />} />
+          <Route path='/editorial-board' element={<EditorialBoard classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
           {/* Call For Papers  */}
-          <Route path='/call-for-papers' element={<CallForPapers />} />
+          <Route path='/call-for-papers' element={<CallForPapers classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
           {/* Contact Us  */}
-          <Route path='/contact-us' element={<ContactUs />} />
+          <Route path='/contact-us' element={<ContactUs classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
           {/* FAQ's  */}
-          <Route path='/faqs' element={<Faqs />} />
+          <Route path='/faqs' element={<Faqs classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
 
         </Routes>
         

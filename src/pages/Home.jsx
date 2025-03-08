@@ -14,8 +14,10 @@ const Home = ({classname}) => {
                     null
             }
         </div>
-        <h1 className='text-[#134275] border-b-[3px] py-4 border-gray-400 text-3xl font-bold'>Journal of Modern English Language and Literature</h1>
+        {/* Heading  */}
+        <h1 className='heading-style'>Journal of Modern English Language and Literature</h1>
 
+        {/* Welcome Message  */}
         <section className='space-y-5 py-5 text-justify'>
             <p className=' font-normal text-[1rem] text-[#555555] '>
             Welcome to the <b>Journal of Modern English Language and Literature (JMELL),</b>  the official scholarly publication of the <b>Society for Modern English Research (SMER)</b>. JMELL is dedicated to advancing research and fostering academic discourse in modern English studies. As a leading interdisciplinary journal, it provides a dynamic platform for researchers, educators, and professionals to engage with contemporary linguistic, literary, and theoretical developments.

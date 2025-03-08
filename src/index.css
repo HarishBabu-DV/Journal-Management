@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 @layer utilities{
     body{
         margin: 0;
@@ -66,7 +65,15 @@
         @apply -right-[150%];
         transition: right 700ms ease-in ;
     }
+}
 
-
-    
+@layer components{
+    .heading-style{
+        color:#134275;
+        border-bottom: 3px solid #9ca3af;
+        padding: 1rem 0;
+        font-size: 1.875rem ;
+        line-height: 2.25rem ;
+        font-weight: 700;
+    }
 }
