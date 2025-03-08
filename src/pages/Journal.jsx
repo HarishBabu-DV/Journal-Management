@@ -1,11 +1,11 @@
 import React from 'react'
 import { useLocation } from 'react-router'
 
-const Journal = () => {
+const Journal = ({classname}) => {
 
   const currentLocation=useLocation()
   return (
-    <article className='w-full pt-[130px] pl-[10%] pr-[27%] max-lg:pl-[5%] max-lg:pr-[22%] max-md:pr-[5%] max-md:pt-[80px]'>
+    <article className={` ${classname}  max-md:pt-[80px]`}>
          {/* Path  */}
          <div>
             {
