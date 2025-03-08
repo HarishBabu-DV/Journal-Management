@@ -16,16 +16,19 @@ import Faqs from './pages/Faqs'
 
 const App = () => {
   return (
-    // App Container  
-    <main className='max-w-[1920px] mx-auto w-full relative'>
+    <>
+    {/* Header  */}
+    <Header />
+    
+    {/* App Container   */}
+    <main className='max-w-[1920px] mx-auto px-[10%]  w-full flex gap-10'>
 
-        {/* Header  */}
-        <Header />
+        
         <Routes>
           {/* Home  */}
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home classname='w-[80%] max-lg:w-full pt-[130px]' />} />
           {/* About  */}
-          <Route path='/about/journal' element={<Journal />} /> 
+          <Route path='/about/journal' element={<Journal classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} /> 
           <Route path='/about/author-guidelines' element={<AuthorGuidelines />} />
           <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess />} />
           <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues />} />
@@ -44,7 +47,14 @@ const App = () => {
 
         </Routes>
         
+        {/* Sidebar  */}
+        <aside className='w-[20%] border bg-gray-300 h-full mt-[130px] p-3 max-lg:hidden'>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aperiam minima maiores, error quia eveniet magnam saepe vitae veritatis, quos dicta unde nisi repudiandae reiciendis eaque nemo reprehenderit! Odio, nobis?</p>
+        </aside>
+
     </main>
+
+    </>
   )
 }
 

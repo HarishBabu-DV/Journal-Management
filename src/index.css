@@ -10,6 +10,12 @@
         padding: 0;
         box-sizing: border-box;
     }
+    @media screen and (max-width:1024px) {
+        ::-webkit-scrollbar{
+            width: 0px;
+        }    
+    }
+
     /* About  */
     .about-navitem-container>.about-navitem>span{
         @apply transition-colors;
@@ -50,7 +56,7 @@
         @apply right-0;
         transition: right 700ms ease-out;
     }
-    @media screen and (min-width:768px) {
+    @media screen and (min-width:1024px) {
         #toggle-menu:checked ~ .vertical-navbar{
             @apply -right-[150%];
             transition: right 700ms ease-in ;

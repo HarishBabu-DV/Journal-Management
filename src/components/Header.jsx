@@ -35,8 +35,9 @@ const Header = () => {
   },[])
   
   return (
-    <header className='bg-white fixed top-0 left-1/2 -translate-x-1/2 w-full px-[10%] max-lg:px-[5%]'>
-        {/* Checkbox to toggle menu  */}
+    <header className='flex justify-center'>
+      <div className='fixed  max-w-[1920px] w-full px-[10%] bg-white '>
+        {/* Checkbox to toggle menu  */}  
         <input type="checkbox" ref={toggleVerticalMenu} name="open-menu" id="toggle-menu" />
 
         {/* Logo and user profile Container  */}
@@ -52,14 +53,14 @@ const Header = () => {
                 {/* <FaRegCircleUser className='text-[1.8rem] text-[#494949] max-sm:text-[1.6rem]'/> */}
               </Link>
               {/* Menu icon  */}
-              <label htmlFor="toggle-menu" className='hover:cursor-pointer hidden max-md:block '>
+              <label htmlFor="toggle-menu" className='hover:cursor-pointer hidden max-lg:block '>
                 <HiOutlineMenu className='text-[1.8rem] text-[#494949]'/>
               </label>
             </div>
         </section>
 
         {/*Vertical Navigation bar  */}
-        <nav className='bg-[#2e2e2e] fixed top-0 h-screen z-20 w-[40%] py-8 vertical-navbar max-sm:w-full'>
+        <nav className='bg-[#2e2e2e] fixed top-0 h-screen  max-lg:overflow-y-scroll z-50 w-[40%] py-8 vertical-navbar max-sm:w-full'>
 
           <label htmlFor="toggle-menu" className='flex justify-end pr-8 hover:cursor-pointer'>
             <IoClose className='text-[1.8rem] text-white max-sm:text-[1.6rem] ' />
@@ -90,6 +91,7 @@ const Header = () => {
               </div>
             </div>
 
+                  
             {/*Editorial Board,..,faqs*/}
             {
               navItems.thirdSet.map((navItem)=>(
@@ -103,23 +105,25 @@ const Header = () => {
 
 
         {/*Horizontal Navigation bar  */}
-        <nav className='flex flex-wrap items-center gap-10 bg-[#2e2e2e] relative pl-6 max-md:hidden'>
+        <nav className='flex flex-wrap items-center gap-10 bg-[#2e2e2e] z-50 pl-6 max-lg:hidden'>
           
           {/* Home  */}
           <Link style={currentLocation.pathname==='/'?{borderBottom:"5px solid #1b9ce3"}:null }  to={'/'} className='text-white py-[.3rem]  hover:text-[#1b9ce3] transition-colors'> {navItems.firstSet} </Link>
           
           {/* About  */}
-          <div className='relative hover:cursor-pointer about-navitem-container ' ref={horizontalAboutMenuRef} onClick={()=>{
+          <div className='relative z-50 hover:cursor-pointer about-navitem-container ' ref={horizontalAboutMenuRef} onClick={()=>{
                 setIsHorizontalAboutOpen(!isHorizontalAboutOpen)
-            }
-            }>
-            <div style={currentLocation.pathname.includes('/about')?{borderBottom:"5px solid #1b9ce3"}:null } className='flex items-center gap-2 about-navitem horizontal-about-navitem py-[.3rem]' >
+            }  
+            } onMouseOver={()=>setIsHorizontalAboutOpen(true)} onMouseOut={()=>setIsHorizontalAboutOpen(false)}>
+            <div  
+
+                style={currentLocation.pathname.includes('/about')?{borderBottom:"5px solid #1b9ce3"}:null } className='flex items-center gap-2 about-navitem horizontal-about-navitem py-[.3rem]' >
               <span className='text-white '>About</span>
               <span className='text-white '><FaChevronDown /></span>
             </div>
             {/* Hidden navitems container  */}
-            <div style={isHorizontalAboutOpen ? {display:"block"}:{display:"none"}}  className='absolute top-[130%] bg-white left-0 w-[300px]  hidden-navitems'>
-              <div className='flex flex-col'>
+            <div className={`${isHorizontalAboutOpen ? 'opacity-1 top-[105%] visible left-0' : 'opacity-0 top-[80%] invisible -left-0'} absolute transition-all  z-40 w-[300px]  hidden-navitems`} >
+              <div className='flex flex-col  bg-white  mt-3 '>
                 {
                   navItems.secondSet.map((navItem)=>(
                     <div key={navItem.id} className='px-4  hover:bg-[#cccccc94] flex hidden-navitems-navitem'>
@@ -139,11 +143,8 @@ const Header = () => {
           }
         </nav>
           
-        {/* Sidebar  */}
-        <aside className='w-[15%] bg-gray-300 h-[60vh] right-[10%] absolute top-[120%] max-lg:right-[5%] max-md:hidden'>
-          <p>hello i am sidebar</p>
-        </aside>
-        <Outlet />
+      </div>
+       
     </header>
   )
 }
