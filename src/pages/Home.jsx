@@ -5,7 +5,7 @@ const Home = ({classname}) => {
 
     const currentLocation=useLocation()
     return (
-    <article className={`${classname}  max-md:pt-[80px]`}>
+    <article className={`${classname} `}>
         {/* Path  */}
         <div>
             {

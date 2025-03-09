@@ -21,29 +21,29 @@ const App = () => {
     <Header />
     
     {/* App Container   */}
-    <main className='max-w-[1920px] mx-auto px-[10%]  w-full flex gap-10'>
+    <main className='max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px]  max-lg:pt-[80px] w-full flex gap-10'>
 
         
         <Routes>
           {/* Home  */}
-          <Route path='/' element={<Home classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/' element={<Home classname={'w-[80%] max-lg:w-full '} />} />
           {/* About  */}
-          <Route path='/about/journal' element={<Journal classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} /> 
-          <Route path='/about/author-guidelines' element={<AuthorGuidelines classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
-          <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
-          <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
-          <Route path='/about/research-ethics-and-policies' element={<ResearchEthicsAndPolicies classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
-          <Route path='/about/indexing-and-abstracting' element={<IndexingAndAbstracting classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
-          <Route path='/about/reviewer-guidelines' element={<ReviewerGuidelines classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/about/journal' element={<Journal classname={'w-[80%] max-lg:w-full '}/>} /> 
+          <Route path='/about/author-guidelines' element={<AuthorGuidelines classname={'w-[80%] max-lg:w-full'} />} />
+          <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess classname={'w-[80%] max-lg:w-full'} />} />
+          <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues classname={'w-[80%] max-lg:w-full'} />} />
+          <Route path='/about/research-ethics-and-policies' element={<ResearchEthicsAndPolicies classname={'w-[80%] max-lg:w-full'} />} />
+          <Route path='/about/indexing-and-abstracting' element={<IndexingAndAbstracting classname={'w-[80%] max-lg:w-full'}/>} />
+          <Route path='/about/reviewer-guidelines' element={<ReviewerGuidelines classname={'w-[80%] max-lg:w-full'} />} />
 
           {/* Editorial Board  */}
-          <Route path='/editorial-board' element={<EditorialBoard classname={'w-[80%] max-lg:w-full pt-[130px]'} />} />
+          <Route path='/editorial-board' element={<EditorialBoard classname={'w-[80%] max-lg:w-full'} />} />
           {/* Call For Papers  */}
-          <Route path='/call-for-papers' element={<CallForPapers classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
+          <Route path='/call-for-papers' element={<CallForPapers classname={'w-[80%] max-lg:w-full'}/>} />
           {/* Contact Us  */}
-          <Route path='/contact-us' element={<ContactUs classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
+          <Route path='/contact-us' element={<ContactUs classname={'w-[80%] max-lg:w-full'}/>} />
           {/* FAQ's  */}
-          <Route path='/faqs' element={<Faqs classname={'w-[80%] max-lg:w-full pt-[130px]'}/>} />
+          <Route path='/faqs' element={<Faqs classname={'w-[80%] max-lg:w-full'}/>} />
 
         </Routes>
         
