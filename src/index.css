@@ -14,6 +14,12 @@
         padding: 0;
         box-sizing: border-box;
     }
+    /*<---------------App.jsx--------------->*/
+    /*Main container*/
+    .main-container{
+        @apply max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px] max-lg:pt-[80px] w-full flex gap-10;
+    }
+    /*<---------------Header.jsx--------------->*/
     /* About  */
     .about-navitem-container>.about-navitem>span{
         @apply transition-colors;
@@ -69,10 +75,7 @@
 }
 
 @layer components{
-    /*Main container*/
-    .main-container{
-        @apply max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px] max-lg:pt-[80px] w-full flex gap-10;
-    }
+    /*<---------------All pages--------------->*/
     /*All pages heading*/
     .heading-style{
         color:#134275;
