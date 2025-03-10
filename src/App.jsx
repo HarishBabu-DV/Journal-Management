@@ -13,6 +13,7 @@ import EditorialBoard from './pages/EditorialBoard'
 import CallForPapers from './pages/CallForPapers'
 import ContactUs from './pages/ContactUs'
 import Faqs from './pages/Faqs'
+import BreadCrumb from './components/BreadCrumb'
 
 const App = () => {
   return (
@@ -21,31 +22,34 @@ const App = () => {
     <Header />
     
     {/* App Container   */}
-    <main className='max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px]  max-lg:pt-[80px] w-full flex gap-10'>
-
+    <main className='max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px] max-lg:pt-[80px] w-full flex gap-10'>
         
-        <Routes>
-          {/* Home  */}
-          <Route path='/' element={<Home classname={'w-[80%] max-lg:w-full '} />} />
-          {/* About  */}
-          <Route path='/about/journal' element={<Journal classname={'w-[80%] max-lg:w-full '}/>} /> 
-          <Route path='/about/author-guidelines' element={<AuthorGuidelines classname={'w-[80%] max-lg:w-full'} />} />
-          <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess classname={'w-[80%] max-lg:w-full'} />} />
-          <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues classname={'w-[80%] max-lg:w-full'} />} />
-          <Route path='/about/research-ethics-and-policies' element={<ResearchEthicsAndPolicies classname={'w-[80%] max-lg:w-full'} />} />
-          <Route path='/about/indexing-and-abstracting' element={<IndexingAndAbstracting classname={'w-[80%] max-lg:w-full'}/>} />
-          <Route path='/about/reviewer-guidelines' element={<ReviewerGuidelines classname={'w-[80%] max-lg:w-full'} />} />
+        <section className='w-[80%] max-lg:w-full'>
+          {/* Breadcrumb  */}
+          <BreadCrumb />
+          <Routes>
+            {/* Home  */}
+            <Route path='/' element={<Home />} />
+            {/* About  */}
+            <Route path='/about/journal' element={<Journal/>} /> 
+            <Route path='/about/author-guidelines' element={<AuthorGuidelines />} />
+            <Route path='/about/submission-and-review-process' element={<SubmissionAndReviewProcess />} />
+            <Route path='/about/current-and-past-issues' element={<CurrentAndPastIssues />} />
+            <Route path='/about/research-ethics-and-policies' element={<ResearchEthicsAndPolicies />} />
+            <Route path='/about/indexing-and-abstracting' element={<IndexingAndAbstracting/>} />
+            <Route path='/about/reviewer-guidelines' element={<ReviewerGuidelines />} />
 
-          {/* Editorial Board  */}
-          <Route path='/editorial-board' element={<EditorialBoard classname={'w-[80%] max-lg:w-full'} />} />
-          {/* Call For Papers  */}
-          <Route path='/call-for-papers' element={<CallForPapers classname={'w-[80%] max-lg:w-full'}/>} />
-          {/* Contact Us  */}
-          <Route path='/contact-us' element={<ContactUs classname={'w-[80%] max-lg:w-full'}/>} />
-          {/* FAQ's  */}
-          <Route path='/faqs' element={<Faqs classname={'w-[80%] max-lg:w-full'}/>} />
+            {/* Editorial Board  */}
+            <Route path='/editorial-board' element={<EditorialBoard />} />
+            {/* Call For Papers  */}
+            <Route path='/call-for-papers' element={<CallForPapers/>} />
+            {/* Contact Us  */}
+            <Route path='/contact-us' element={<ContactUs/>} />
+            {/* FAQ's  */}
+            <Route path='/faqs' element={<Faqs/>} />
 
-        </Routes>
+          </Routes>
+        </section>
         
         {/* Sidebar  */}
         <aside className='w-[20%] border bg-gray-300 h-full mt-[130px] p-3 max-lg:hidden'>

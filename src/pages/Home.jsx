@@ -1,19 +1,11 @@
 import React from 'react'
-import { useLocation } from 'react-router'
 
-const Home = ({classname}) => {
+const Home = () => {
 
-    const currentLocation=useLocation()
+   
     return (
-    <article className={`${classname} `}>
-        {/* Path  */}
-        <div>
-            {
-                currentLocation?.pathname === '/' ?
-                    <p className='text-gray-400 font-medium'>Home</p> :
-                    null
-            }
-        </div>
+    <article>
+       
         {/* Heading  */}
         <h1 className='heading-style'>Journal of Modern English Language and Literature</h1>
 
