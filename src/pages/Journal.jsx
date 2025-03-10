@@ -1,21 +1,9 @@
 import React from 'react'
-import { useLocation } from 'react-router'
 import { aboutJournal } from '../assets/assets'
 
-const Journal = ({classname}) => {
-
-  const currentLocation=useLocation()
+const Journal = () => {  
   return (
-    <article className={` ${classname} `}>
-         {/* Path  */}
-         <div>
-            {
-                currentLocation?.pathname === '/about/journal' ?
-                    <p className='text-gray-400 font-medium'>About {">"} Journal</p> :
-                    null
-            }
-        </div>
-
+    <article >
         {/* Heading  */}
         <h1 className=' text-[#134275] border-b-[3px] py-4 border-gray-400 text-3xl font-bold'>About the Journal</h1>
 
