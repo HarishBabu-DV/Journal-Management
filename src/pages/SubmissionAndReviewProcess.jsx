@@ -1,20 +1,8 @@
 import React from 'react'
-import { useLocation } from 'react-router'
 
-const SubmissionAndReviewProcess = ({classname}) => {
-  // To retrieve routes 
-  const currentLocation=useLocation()
+const SubmissionAndReviewProcess = () => {
   return (
-    <article className={`${classname}`}>
-      {/* Path  */}
-      <div>
-            {
-                currentLocation?.pathname === '/about/submission-and-review-process' ?
-                    <p className='text-gray-400 font-medium'>About {">"} Submission and Review Process</p> :
-                    null
-            }
-      </div>
-
+    <article >
       {/* Heading  */}
       <h1 className='heading-style'>Submission and Review Process</h1>
     </article>
