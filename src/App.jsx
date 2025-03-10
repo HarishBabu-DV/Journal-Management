@@ -23,8 +23,7 @@ const App = () => {
       <Header />
       
       {/* Main   */}
-      <main className='max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px] max-lg:pt-[80px] w-full flex gap-10'>
-          
+      <main className='main-container'>
           <section className='w-[80%] max-lg:w-full'>
             {/* Breadcrumb  */}
             <BreadCrumb />

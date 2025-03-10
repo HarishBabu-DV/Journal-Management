@@ -4,17 +4,16 @@
 
 
 @layer utilities{
-    body{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
     @media screen and (max-width:1024px) {
         ::-webkit-scrollbar{
             width: 0px;
         }    
     }
-
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     /* About  */
     .about-navitem-container>.about-navitem>span{
         @apply transition-colors;
@@ -51,6 +50,7 @@
     #toggle-menu{
         display: none;
     }
+    /*When menu is opened*/
     #toggle-menu:checked ~ .vertical-navbar{
         @apply right-0;
         transition: right 700ms ease-out;
@@ -61,6 +61,7 @@
             transition: right 700ms ease-in ;
         }
     }
+    /*When menu is closed*/
     #toggle-menu:not(:checked) ~ .vertical-navbar{
         @apply -right-[150%];
         transition: right 700ms ease-in ;
@@ -68,6 +69,11 @@
 }
 
 @layer components{
+    /*Main container*/
+    .main-container{
+        @apply max-w-[1920px] mx-auto px-[10%] max-lg:px-[5%] pt-[130px] max-lg:pt-[80px] w-full flex gap-10;
+    }
+    /*All pages heading*/
     .heading-style{
         color:#134275;
         border-bottom: 3px solid #9ca3af;
